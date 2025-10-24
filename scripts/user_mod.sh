@@ -9,8 +9,8 @@ id developer
 # Change username from developer to deuser
 sudo usermod -l deuser developer
 
-# Create devgroup
-sudo groupadd devgroup
+# Create devgroup if it doesn't exist
+sudo groupadd devgroup 2>/dev/null || echo "Group devgroup already exists"
 
 # Add deuser to devgroup
 sudo usermod -a -G devgroup deuser
